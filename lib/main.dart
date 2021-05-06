@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
-                    Navigator.pushNamed(context, '/Table');
+                    Navigator.pushNamed(context, '/Table',arguments: 'Sala');
                   },
                   child: SizedBox(
                     width: 200,
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
-                    Navigator.pushNamed(context, '/Table');
+                    Navigator.pushNamed(context, '/AllOrder');
                   },
                   child: SizedBox(
                     width: 200,
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
-                    Navigator.pushNamed(context, '/Table');
+                    Navigator.pushNamed(context, '/Table',arguments: 'Cassa');
                   },
                   child: SizedBox(
                     width: 200,

@@ -6,7 +6,8 @@ class MySelectTable extends StatefulWidget {
   final String tableName;
   final bool tableActive;
   final int tableId;
-  MySelectTable(this.tableName, this.tableActive, this.tableId, {Key key})
+  final String from;
+  MySelectTable(this.tableName, this.tableActive, this.tableId,this.from, {Key key})
       : super(key: key);
 
   @override
@@ -19,6 +20,7 @@ class _MyStatefulWidgetState extends State<MySelectTable> {
   String _tableName;
   bool _tableActive;
   int _tableId;
+  String _from;
 
   /// da usare per il identificare il tavolo nel servizio
 
@@ -27,6 +29,7 @@ class _MyStatefulWidgetState extends State<MySelectTable> {
     super.initState();
     _tableName = widget.tableName;
     _tableActive = widget.tableActive;
+    _from = widget.from;
     _tableId = widget.tableId;
   }
 
@@ -37,7 +40,8 @@ class _MyStatefulWidgetState extends State<MySelectTable> {
       child: InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.pushNamed(context, '/Menu',
+          _from == 'Sala' ? Navigator.pushNamed(context, '/Menu',
+              arguments: Data(name:widget.tableName,id: widget.tableId)):  Navigator.pushNamed(context, '/Order',
               arguments: Data(name:widget.tableName,id: widget.tableId));
         },
         child: SizedBox(
