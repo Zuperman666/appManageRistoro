@@ -32,7 +32,7 @@ class _ScrollablePageState extends State<ScrollableMenu> {
     _name = widget.data.name;
     _id = widget.data.id;
     _json=widget.json;
-    final dynamic jsonA = '[{"nome":"polpette","descrizione":"belle","ingredienti":"forse carne"},{"nome":"carne","descrizione":"belle","ingredienti":"forse carne"}]';
+    final dynamic jsonA = '[{"nome":"polpette","descrizione":"belle polpette","ingredienti":"forse carne buona"},{"nome":"carne","descrizione":"belle","ingredienti":"forse carne"}]';
     final jsonResponse = json.decode(jsonA);
     Food person = new Food.fromJson(jsonResponse);
     _json = person;

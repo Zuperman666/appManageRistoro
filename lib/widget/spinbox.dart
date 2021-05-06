@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_sala/model/interface.dart';
 
 class SpinBox extends StatefulWidget {
   final String name;
@@ -14,9 +11,6 @@ class SpinBox extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<SpinBox> {
-
-
-
   String _name;
   int _quantita;
   bool showModal = false;
@@ -28,12 +22,14 @@ class _MyStatefulWidgetState extends State<SpinBox> {
     myController.dispose();
     super.dispose();
   }
+
   void change() {
     print(showModal);
     setState(() {
       showModal = !showModal;
     });
   }
+
   _printLatestValue() {
     print("Second text field: ${myController.text}");
   }
@@ -98,25 +94,25 @@ class _MyStatefulWidgetState extends State<SpinBox> {
             children: [
               new Flexible(
                   child: TextButton(
-                    child: Icon(Icons.note),
-                    onPressed: change,
-                  )),
+                child: Icon(Icons.note),
+                onPressed: change,
+              )),
             ],
           )),
       Visibility(
-        visible: (showModal == true),
+          visible: (showModal == true),
           child: Row(
-        children: [
-          new Flexible(
-              child: new TextField(
-            controller: myController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Note',
-            ),
-          )),
-        ],
-      ))
+            children: [
+              new Flexible(
+                  child: new TextField(
+                controller: myController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Note',
+                ),
+              )),
+            ],
+          ))
     ]);
   }
 }
